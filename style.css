@@ -1,0 +1,14 @@
+#container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    width: 400px;
+    height: 400px;
+}
+
+.cell {
+    background-color: white;
+    width: 10%;
+    height: 10%;
+}
