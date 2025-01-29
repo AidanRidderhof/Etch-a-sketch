@@ -5,10 +5,11 @@
     background-color: black;
     width: 400px;
     height: 400px;
+    gap:1%;
 }
 
 .cell {
     background-color: white;
-    width: 10%;
-    height: 10%;
+    width: 9%;
+    height: 9%;
 }
