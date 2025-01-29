@@ -1,10 +1,15 @@
 const container = document.querySelector("#container");
 
-for (let i = 0; i < 100; i++) {
-  let square = document.createElement("div");
-  square.classList.add("cell");
-  container.appendChild(square);
+function resize(size) {
+  for (let i = 0; i < size*size; i++) {
+    let square = document.createElement("div");
+    square.classList.add("cell");
+    container.appendChild(square);
+  }
 }
+
+resize(10);
+
 
 let cells = document.querySelectorAll('.cell');
 cells.forEach(cell => {
@@ -23,6 +28,7 @@ clear.addEventListener('click', () => {
 const redraw = document.querySelector('#redraw')
 redraw.addEventListener('click', () => {
   let size = prompt("Enter a number 1-100");
+  resize(size);
 })
 
 //make the container initialization a function and call it in redraw
