@@ -19,18 +19,22 @@ function resize(size) {
       cell.style.backgroundColor = 'black';
   });
   });
-
 }
 
-resize(10);
-
-let cells = document.querySelectorAll('.cell');
-const clear = document.querySelector("#clear")
-clear.addEventListener('click', () => {
+function clearBoard() {
+  let cells = document.querySelectorAll('.cell');
   cells.forEach(cell => {
     cell.style.backgroundColor = 'white';
   });
-})
+}
+
+
+resize(10);
+
+
+
+const clear = document.querySelector("#clear")
+clear.addEventListener('click', clearBoard);
 
 const redraw = document.querySelector('#redraw')
 redraw.addEventListener('click', () => {
