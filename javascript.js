@@ -1,23 +1,29 @@
 const container = document.querySelector("#container");
 
 function resize(size) {
+  let cell = document.getElementsByClassName('cell');
+  while(cell.length > 0){
+    cell[0].parentNode.removeChild(cell[0]);
+}
+
   for (let i = 0; i < size*size; i++) {
     let square = document.createElement("div");
     square.classList.add("cell");
     container.appendChild(square);
-  }
 }
 
-resize(10);
-
-
-let cells = document.querySelectorAll('.cell');
-cells.forEach(cell => {
+  let cells = document.querySelectorAll('.cell');
+  cells.forEach(cell => {
   cell.addEventListener('mouseover', () => {
       cell.style.backgroundColor = 'black';
   });
   });
 
+}
+
+resize(10);
+
+let cells = document.querySelectorAll('.cell');
 const clear = document.querySelector("#clear")
 clear.addEventListener('click', () => {
   cells.forEach(cell => {
