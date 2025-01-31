@@ -3,9 +3,7 @@ const container = document.querySelector("#container");
 function resize(size) {
   //deletes existings cells
   let cell = document.getElementsByClassName('cell');
-  while(cell.length > 0){
-    cell[0].parentNode.removeChild(cell[0]);
-}
+  container.innerHTML = '';
   //creates cells
   for (let i = 0; i < size*size; i++) {
     let square = document.createElement("div");
@@ -15,7 +13,9 @@ function resize(size) {
   //adds hover effect
   let cells = document.querySelectorAll('.cell');
   cells.forEach(cell => {
-  cell.addEventListener('mouseover', () => {
+    cell.style.height = 400/size + 'px';
+    cell.style.width = 400/size + 'px';
+    cell.addEventListener('mouseover', () => {
       cell.style.backgroundColor = 'black';
   });
   });
@@ -41,5 +41,3 @@ redraw.addEventListener('click', () => {
   let size = prompt("Enter a number 1-100");
   resize(size);
 })
-
-//make the container initialization a function and call it in redraw
