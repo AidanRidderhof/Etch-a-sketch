@@ -10,11 +10,13 @@ function resize(size) {
     square.classList.add("cell");
     container.appendChild(square);
 }
-  //adds hover effect
+  //sizes adds hover effect
   let cells = document.querySelectorAll('.cell');
   cells.forEach(cell => {
-    cell.style.height = 400/size + 'px';
-    cell.style.width = 400/size + 'px';
+    cell.style.height = ((400-(size*2))/size) + 'px';
+    cell.style.width = ((400-(size*2))/size) + 'px';
+    cell.style.border = 'solid';
+    cell.style.borderWidth = 1 + 'px';
     cell.addEventListener('mouseover', () => {
       cell.style.backgroundColor = 'black';
   });
@@ -39,5 +41,7 @@ clear.addEventListener('click', clearBoard);
 const redraw = document.querySelector('#redraw')
 redraw.addEventListener('click', () => {
   let size = prompt("Enter a number 1-100");
-  resize(size);
+  if (size<=100){
+    resize(size);
+  }
 })
